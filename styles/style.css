@@ -10,6 +10,7 @@ html {
 
 :root {
     --accent-color: #545050;
+	--transition-value: 0.5s ease;
 }
 
 .page {
@@ -170,7 +171,7 @@ video {
     gap: 5px;
     border: 1px solid transparent;
     padding: 2px;
-    transition: 0.5s ease;
+    transition: var(--transition-value);
 }
 
 .content__card-link {
@@ -180,7 +181,7 @@ video {
 
 .content__video-card-title {
     max-width: 192px;
-    margin-bottom: 6px;
+    padding-bottom: 6px;
     overflow: hidden;
     font-family: Oswald, sans-serif;
     font-weight: 700;
@@ -190,10 +191,12 @@ video {
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-position: under;
+	text-underline-offset: -1px;
+	text-decoration-thickness: 2px;
     text-transform: uppercase;
     text-overflow: ellipsis;
 
-    transition: 0.5s ease;
+    transition: var(--transition-value);
     white-space: nowrap;
 }
 
@@ -201,11 +204,14 @@ video {
     display: -webkit-box;
     overflow: hidden;
     line-height: 16px;
+	padding-bottom: 1px;
 
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-position: under;
-    transition: 0.5s ease;
+	text-underline-offset: -2px;
+	text-decoration-thickness: 1px;
+    transition: var(--transition-value);
     -webkit-line-clamp: 4;
     line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -214,7 +220,7 @@ video {
 .content__card-link:hover .content__video-card-title,
 .content__card-link:hover .content__video-card-description {
     text-decoration: underline;
-    text-decoration-color: initial;
+    text-decoration-color: currentColor;
     text-underline-position: under;
 }
 
@@ -234,6 +240,7 @@ video {
 }
 
 .content__video-card-thumbnail {
+	flex-shrink: 0;
     width: 194px;
     height: 103px;
     object-fit: cover;
@@ -281,7 +288,7 @@ video {
     text-underline-position: under;
     background-color: transparent;
 
-    transition: 0.5s ease;
+    transition: var(--transition-value);
     cursor: pointer;
 }
 
@@ -307,7 +314,7 @@ video {
     padding-left: 4px;
     outline: 1px solid transparent;
     outline-offset: 1px;
-    transition: 0.5s ease;
+    transition: var(--transition-value)
 }
 
 .checkbox:focus-within {
@@ -322,7 +329,7 @@ video {
     text-decoration: underline;
     text-decoration-color: initial;
     text-underline-position: under;
-    transition: 0.5s ease;
+    transition: var(--transition-value);
 }
 
 .checkbox:hover .checkbox__control:active ~ .checkbox__text {
@@ -333,10 +340,10 @@ video {
     display: inline-block;
     width: 14px;
     height: 14px;
-    margin-right: 4px;
+    margin-right: 6px;
     outline: 1px solid #fff;
     outline-offset: 2px;
-    transition: 0.5s ease;
+    transition: var(--transition-value);
 }
 
 .checkbox__control:active ~ .checkbox__visible-pseudo-control,
