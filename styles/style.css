@@ -47,8 +47,8 @@ ol {
     display: flex;
     gap: 30px;
     padding: 30px;
-	min-inline-size: 1200px;
-	inline-size: 1200px;
+    min-inline-size: 1200px;
+    inline-size: 1200px;
 }
 
 .content__accent {
@@ -86,29 +86,29 @@ video {
 }
 
 .search-form__aligned-fieldset {
-	margin-bottom: 5px;
-}
-
-.search-form__fieldset-title {
-    color: inherit;
-    font-family: inherit;
-    background-color: transparent;
-    font-weight: inherit;
-    font-size: inherit;
     margin-bottom: 5px;
 }
 
-.search-form__textfield {
-	appearance: none;
-	outline: none;
+.search-form__fieldset-title {
+    margin-bottom: 5px;
     color: inherit;
     font-family: inherit;
-    background-color: transparent;
     font-weight: inherit;
     font-size: inherit;
+    background-color: transparent;
+}
+
+.search-form__textfield {
     width: 225px;
     border: 1px solid #fff;
     border-width: 1px 0;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    appearance: none;
 }
 
 .search-form__textfield:active {
@@ -117,7 +117,7 @@ video {
 
 .search-form__textfield:focus {
     outline: 1px solid #fff;
-	outline-offset: 1px;
+    outline-offset: 1px;
 }
 
 .search-form__textfield::placeholder {
@@ -139,8 +139,8 @@ video {
 }
 
 .content__details {
-	inline-size: 400px;
     align-self: stretch;
+    inline-size: 400px;
 }
 
 .content__title {
@@ -149,11 +149,11 @@ video {
 
 .content__list {
     position: relative;
-	width: fit-content;
+    width: fit-content;
     height: 298px;
     overflow-y: auto;
     scrollbar-width: thin;
-	scrollbar-color: rgba(0 0 0 / 0.5) rgba(255 255 255 / 0.3);
+    scrollbar-color: rgba(0 0 0 / 0.5) rgba(255 255 255 / 0.3);
 }
 
 .content__list:has(.preloader) {
@@ -166,57 +166,56 @@ video {
 
 .content__video-card {
     display: flex;
-    padding: 2px;
-    gap: 5px;
     justify-content: space-between;
+    gap: 5px;
     border: 1px solid transparent;
+    padding: 2px;
     transition: 0.5s ease;
 }
 
 .content__card-link {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 .content__video-card-title {
-    font-family: Oswald, sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 30px;
+    max-width: 192px;
     margin-bottom: 6px;
+    overflow: hidden;
+    font-family: Oswald, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
 
     text-decoration: underline;
-    text-underline-position: under;
     text-decoration-color: transparent;
-	text-transform: uppercase;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	max-width: 192px; 
+    text-underline-position: under;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
 
     transition: 0.5s ease;
+    white-space: nowrap;
 }
 
 .content__video-card-description {
+    display: -webkit-box;
+    overflow: hidden;
     line-height: 16px;
 
     text-decoration: underline;
-    text-underline-position: under;
     text-decoration-color: transparent;
+    text-underline-position: under;
     transition: 0.5s ease;
-
-	display: -webkit-box;
-	-webkit-line-clamp: 4;
-	line-clamp: 4;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .content__card-link:hover .content__video-card-title,
 .content__card-link:hover .content__video-card-description {
     text-decoration: underline;
-    text-underline-position: under;
     text-decoration-color: initial;
+    text-underline-position: under;
 }
 
 .content__card-link_current .content__video-card,
@@ -238,12 +237,12 @@ video {
     width: 194px;
     height: 103px;
     object-fit: cover;
-	object-position: center;
+    object-position: center;
 }
 
 .more-button {
-    width: calc(100% - 6px);
     display: block;
+    width: calc(100% - 6px);
     margin: 0 auto 2px;
 }
 
@@ -254,61 +253,60 @@ video {
     width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
     height: 1px;
     margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
-    padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
     border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+    padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+    overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
     clip: rect(
         0 0 0 0
     ); /* это свойство обрезает видимую область до нулевого значения */
-    overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
 }
 
 .main-heading {
     font-family: Oswald, sans-serif;
-    font-size: 75px;
     font-weight: 700;
+    font-size: 75px;
     line-height: 70px;
     text-transform: uppercase;
 }
 
 .button {
-    color: inherit;
-    font-family: inherit;
-    background-color: transparent;
-    font-weight: 700;
-    font-size: inherit;
     border: 1px solid #fff;
     padding: 6px 74px;
-
-    transition: 0.5s ease;
-    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: inherit;
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-position: under;
+    background-color: transparent;
+
+    transition: 0.5s ease;
+    cursor: pointer;
 }
 
 .button:hover {
-    background-color: transparent;
     text-decoration-color: initial;
+    background-color: transparent;
 }
 
 .button:active {
-    background-color: var(--accent-color);
     outline: none;
     text-decoration-color: transparent;
+    background-color: var(--accent-color);
 }
 
 .button:focus {
-    outline-offset: 1px;
     outline: 1px solid #fff;
+    outline-offset: 1px;
 }
 
 .checkbox {
     display: flex;
     align-items: center;
-    /* gap: 5px; */
+    padding-left: 4px;
     outline: 1px solid transparent;
     outline-offset: 1px;
-    padding-left: 4px;
     transition: 0.5s ease;
 }
 
@@ -322,9 +320,9 @@ video {
 
 .checkbox:hover .checkbox__text {
     text-decoration: underline;
+    text-decoration-color: initial;
     text-underline-position: under;
     transition: 0.5s ease;
-    text-decoration-color: initial;
 }
 
 .checkbox:hover .checkbox__control:active ~ .checkbox__text {
@@ -335,9 +333,9 @@ video {
     display: inline-block;
     width: 14px;
     height: 14px;
+    margin-right: 4px;
     outline: 1px solid #fff;
     outline-offset: 2px;
-    margin-right: 4px;
     transition: 0.5s ease;
 }
 
