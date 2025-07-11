@@ -10,6 +10,7 @@ html {
 
 :root {
     --accent-color: #545050;
+	--transition-value: 0.5s ease;
 }
 
 .page {
@@ -45,7 +46,6 @@ ol {
 
 .content {
     display: flex;
-    flex-wrap: wrap;
     gap: 30px;
     max-width: 1200px;
     padding: 30px;
@@ -68,15 +68,11 @@ ol {
 }
 
 .result__video {
-    position: absolute;
-    inset: 0;
     width: 100%;
-    height: 100%;
+    height: 386px;
 }
 
 video {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -85,11 +81,15 @@ video {
     display: flex;
     justify-content: space-between;
     align-items: end;
-    margin-top: 22px;
+    margin-top: 11px;
 }
 
 .search-form__fieldset {
     border: none;
+}
+
+.search-form__aligned-fieldset {
+    margin-bottom: 5px;
 }
 
 .search-form__fieldset-title {
@@ -114,6 +114,11 @@ video {
 
 .search-form__textfield:active {
     border-width: 1px;
+}
+
+.search-form__textfield:focus {
+    outline: 1px solid #fff;
+    outline-offset: 1px;
 }
 
 .search-form__textfield::placeholder {
@@ -146,9 +151,11 @@ video {
 
 .content__list {
     position: relative;
+    width: fit-content;
     height: 298px;
     overflow-y: auto;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0 0 0 / 0.5) rgba(255 255 255 / 0.3);
 }
 
 .content__list:has(.preloader) {
@@ -188,7 +195,10 @@ video {
 }
 
 .content__video-card-description {
+    display: -webkit-box;
+    overflow: hidden;
     line-height: 16px;
+	padding-bottom: 1px;
 
     text-decoration: underline;
     text-decoration-color: transparent;
@@ -219,9 +229,11 @@ video {
 }
 
 .content__video-card-thumbnail {
+	flex-shrink: 0;
     width: 194px;
     height: 103px;
     object-fit: cover;
+    object-position: center;
 }
 
 .more-button {
@@ -264,7 +276,6 @@ video {
     text-decoration-color: transparent;
     text-underline-position: under;
     background-color: transparent;
-
     transition: 0.5s ease;
     cursor: pointer;
 }
