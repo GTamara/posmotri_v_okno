@@ -47,9 +47,9 @@ ol {
 .content {
     display: flex;
     gap: 30px;
+    max-width: 1200px;
     padding: 30px;
-    min-inline-size: 1200px;
-    inline-size: 1200px;
+    inline-size: 100%;
 }
 
 .content__accent {
@@ -63,6 +63,8 @@ ol {
 
 .result__video-container {
     position: relative;
+    width: 100%;
+    padding-bottom: 54.29%;
 }
 
 .result__video {
@@ -103,13 +105,11 @@ video {
     width: 225px;
     border: 1px solid #fff;
     border-width: 1px 0;
-    outline: none;
     color: inherit;
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
     background-color: transparent;
-    appearance: none;
 }
 
 .search-form__textfield:active {
@@ -140,8 +140,9 @@ video {
 }
 
 .content__details {
+    flex-basis: 400px;
     align-self: stretch;
-    inline-size: 400px;
+    max-width: 400px;
 }
 
 .content__title {
@@ -171,18 +172,17 @@ video {
     gap: 5px;
     border: 1px solid transparent;
     padding: 2px;
-    transition: var(--transition-value);
+    transition: 0.5s ease;
 }
 
 .content__card-link {
+	display: block;
     color: inherit;
     text-decoration: none;
 }
 
 .content__video-card-title {
-    max-width: 192px;
-    padding-bottom: 6px;
-    overflow: hidden;
+    margin-bottom: 6px;
     font-family: Oswald, sans-serif;
     font-weight: 700;
     font-size: 30px;
@@ -191,14 +191,7 @@ video {
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-position: under;
-	text-underline-offset: -1px;
-	text-decoration-thickness: 2px;
-	text-decoration-skip-ink: none;
-    text-transform: uppercase;
-    text-overflow: ellipsis;
-
-    transition: var(--transition-value);
-    white-space: nowrap;
+    transition: 0.5s ease;
 }
 
 .content__video-card-description {
@@ -210,24 +203,18 @@ video {
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-position: under;
-	text-underline-offset: -2px;
-	text-decoration-thickness: 1px;
-	text-decoration-skip-ink: none;
-    transition: var(--transition-value);
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
+    transition: 0.5s ease;
 }
 
 .content__card-link:hover .content__video-card-title,
 .content__card-link:hover .content__video-card-description {
     text-decoration: underline;
-    text-decoration-color: currentColor;
+    text-decoration-color: initial;
     text-underline-position: under;
 }
 
-.content__card-link_current .content__video-card,
-.content__card-link:active .content__video-card {
+.content__card-link:active .content__video-card,
+.content__card-link_current {
     background-color: var(--accent-color);
 }
 
@@ -251,7 +238,7 @@ video {
 
 .more-button {
     display: block;
-    width: calc(100% - 6px);
+    width: calc(100% - 7px);
     margin: 0 auto 2px;
 }
 
@@ -283,14 +270,13 @@ video {
     padding: 6px 74px;
     color: inherit;
     font-family: inherit;
-    font-weight: 700;
+    font-weight: inherit;
     font-size: inherit;
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-position: under;
     background-color: transparent;
-
-    transition: var(--transition-value);
+    transition: 0.5s ease;
     cursor: pointer;
 }
 
@@ -313,10 +299,11 @@ video {
 .checkbox {
     display: flex;
     align-items: center;
+    gap: 5px;
     padding-left: 4px;
     outline: 1px solid transparent;
     outline-offset: 1px;
-    transition: var(--transition-value)
+    transition: 0.5s ease;
 }
 
 .checkbox:focus-within {
@@ -331,7 +318,7 @@ video {
     text-decoration: underline;
     text-decoration-color: initial;
     text-underline-position: under;
-    transition: var(--transition-value);
+    transition: 0.5s ease;
 }
 
 .checkbox:hover .checkbox__control:active ~ .checkbox__text {
@@ -342,10 +329,10 @@ video {
     display: inline-block;
     width: 14px;
     height: 14px;
-    margin-right: 6px;
+    margin-right: 4px;
     outline: 1px solid #fff;
     outline-offset: 2px;
-    transition: var(--transition-value);
+    transition: 0.5s ease;
 }
 
 .checkbox__control:active ~ .checkbox__visible-pseudo-control,
